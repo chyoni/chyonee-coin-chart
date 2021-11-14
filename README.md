@@ -53,3 +53,5 @@
   ```bash
   npm i react-query
   ```
+
+- #08 Last Animation Practice

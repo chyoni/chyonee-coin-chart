@@ -4,6 +4,7 @@ import { ActivityIndicator, FlatList } from 'react-native';
 import { useQuery } from 'react-query';
 import styled from 'styled-components/native';
 import { coins, coinTypes } from '../api';
+import Coin from '../components/coin';
 import { ChildrenInNavParamList } from '../navigators/in-nav';
 
 const Container = styled.View`
@@ -14,12 +15,8 @@ const Loader = styled.View`
   justify-content: center;
   align-items: center;
 `;
-const Coin = styled.View``;
-const CoinName = styled.Text`
-  color: ${(props) => props.theme.textColor};
-`;
-const CoinSymbol = styled.Text`
-  color: ${(props) => props.theme.textColor};
+const Seperator = styled.View`
+  height: 10px;
 `;
 
 const Home: React.FC<NativeStackScreenProps<ChildrenInNavParamList, 'Home'>> =
@@ -46,14 +43,13 @@ const Home: React.FC<NativeStackScreenProps<ChildrenInNavParamList, 'Home'>> =
         <Container>
           <FlatList
             data={cleanData}
-            numColumns={5}
+            numColumns={3}
+            ItemSeparatorComponent={() => <Seperator />}
             keyExtractor={(item) => item.id}
-            renderItem={({ item }) => (
-              <Coin>
-                <CoinName>{item.name}</CoinName>
-                <CoinSymbol>{item.symbol}</CoinSymbol>
-              </Coin>
-            )}
+            // columWrapperStyle은 지금 3개를 하나의 열로 묶어서 렌더링 하고 있는데, 그 3개의 아이템을 하나로 묶는 View의 Style을 어떻게 줄지 설정하는
+            // 옵션이다.
+            columnWrapperStyle={{ justifyContent: 'space-between' }}
+            renderItem={({ item, index }) => <Coin item={item} index={index} />}
           />
         </Container>
       );
