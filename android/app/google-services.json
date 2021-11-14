@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1066982609015",
+    "project_id": "coin-chart-2e880",
+    "storage_bucket": "coin-chart-2e880.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1066982609015:android:bc13f100455fb146de3672",
+        "android_client_info": {
+          "package_name": "com.coinchart"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1066982609015-e50eh4e1e2obqjpetad6co2cmolnsvis.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.coinchart",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "1066982609015-7njgn5qt25gph1anutap4bgq6itctdr4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAmeJfGWc4Ei3jn3UTuvmMJoG4ZMbcl8TE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1066982609015-7njgn5qt25gph1anutap4bgq6itctdr4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
