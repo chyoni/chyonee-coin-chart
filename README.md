@@ -45,3 +45,5 @@
   ```
 
 - #05 Navigation Screen depending on LoggedInState
+
+- #06 LoggedIn by using firebase
