@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "coin-chart",
+    "slug": "coin-chart",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "coin-chart"
+}
