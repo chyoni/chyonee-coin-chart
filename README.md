@@ -57,3 +57,11 @@
 - #08 Last Animation Practice
 
 - #09 React Query Fetcher
+
+- #10 Victory Chart
+
+  ```bash
+  npm i --save victory-native
+  npm i react-native-svg
+  npx pod-install
+  ```
