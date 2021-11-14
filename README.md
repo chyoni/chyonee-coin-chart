@@ -43,3 +43,5 @@
   npm i @react-native-firebase/auth
   npx pod-install
   ```
+
+- #05 Navigation Screen depending on LoggedInState
