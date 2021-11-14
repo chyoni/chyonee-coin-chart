@@ -49,7 +49,9 @@ const Home: React.FC<NativeStackScreenProps<ChildrenInNavParamList, 'Home'>> =
             // columWrapperStyle은 지금 3개를 하나의 열로 묶어서 렌더링 하고 있는데, 그 3개의 아이템을 하나로 묶는 View의 Style을 어떻게 줄지 설정하는
             // 옵션이다.
             columnWrapperStyle={{ justifyContent: 'space-between' }}
-            renderItem={({ item, index }) => <Coin item={item} index={index} />}
+            renderItem={({ item, index }) => (
+              <Coin id={item.id} item={item} index={index} />
+            )}
           />
         </Container>
       );

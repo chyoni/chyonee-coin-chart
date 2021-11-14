@@ -55,3 +55,5 @@
   ```
 
 - #08 Last Animation Practice
+
+- #09 React Query Fetcher

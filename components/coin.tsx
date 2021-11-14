@@ -1,15 +1,18 @@
+import { useNavigation } from '@react-navigation/core';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import React, { useEffect, useRef } from 'react';
-import { Animated, View } from 'react-native';
+import { Animated, View, TouchableOpacity } from 'react-native';
 import styled from 'styled-components/native';
 import { coinTypes } from '../api';
+import { ChildrenInNavParamList } from '../navigators/in-nav';
 
 interface IProps {
   item: coinTypes;
   index: number;
+  id: string;
 }
 
 const Wrapper = styled(Animated.createAnimatedComponent(View))`
-  flex: 0.31;
   justify-content: center;
   align-items: center;
   background-color: ${(props) => props.theme.mainBgColor};
@@ -27,7 +30,9 @@ const Icon = styled.Image`
   border-radius: 15px;
 `;
 
-const Coin: React.FC<IProps> = ({ item, index }) => {
+const Coin: React.FC<IProps> = ({ item, index, id }) => {
+  const navigation =
+    useNavigation<NativeStackNavigationProp<ChildrenInNavParamList>>();
   const opacity = useRef(new Animated.Value(0)).current;
   useEffect(() => {
     Animated.spring(opacity, {
@@ -41,14 +46,19 @@ const Coin: React.FC<IProps> = ({ item, index }) => {
     outputRange: [0.7, 1],
   });
   return (
-    <Wrapper style={{ opacity, transform: [{ scale }] }}>
-      <Icon
-        source={{
-          uri: `https://cryptoicon-api.vercel.app/api/icon/${item.symbol.toLowerCase()}`,
-        }}
-      />
-      <CoinSymbol>{item.symbol}</CoinSymbol>
-    </Wrapper>
+    <TouchableOpacity
+      style={{ flex: 0.31 }}
+      onPress={() => navigation.navigate('Detail', { symbol: item.symbol, id })}
+    >
+      <Wrapper style={{ opacity, transform: [{ scale }] }}>
+        <Icon
+          source={{
+            uri: `https://cryptoicon-api.vercel.app/api/icon/${item.symbol.toLowerCase()}`,
+          }}
+        />
+        <CoinSymbol>{item.symbol}</CoinSymbol>
+      </Wrapper>
+    </TouchableOpacity>
   );
 };
 
