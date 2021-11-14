@@ -47,3 +47,9 @@
 - #05 Navigation Screen depending on LoggedInState
 
 - #06 LoggedIn by using firebase
+
+- #07 React Query
+
+  ```bash
+  npm i react-query
+  ```
